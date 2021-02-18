@@ -41,23 +41,27 @@ describe("hiddenCounter()", function () {
 });
 
 //3. myMap
-describe("myMap", function () {
+describe("myMap()", function () {
   it("should function like the built in Array#map", function () {
     //Arrange
-
+    const array = [1, 2, 3]
+    const cb = (el) => {
+      return el += 1;
+    };
     //Act
-
+    const result = myMap(array, cb);
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(result).to.eql([2, 3, 4]);
   });
 
   it("should not call the built in Array#map", function () {
     //Arrange
-
+    const mapSpy = chai.spy.on(myMap(array), "map")
+    // const mapSpy = chai.spy.on(Array.prototype, "map");
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(mapSpy).to.have.been.called.exactly(0);
   });
 });
 
