@@ -44,13 +44,14 @@ element. Assign the below function to a variable using the const keyword.
 Do not use the built in Array#map - use Array#forEach for iteration.
 */
 const myMap = (array, cb) => {
-  let mapped = [];
+  // let mapped = [];
 
-  array.forEach((el) => {
-   let called =  cb(el);
-   mapped.push(called)
-  })
-  return mapped;
+  // array.forEach((el) => {
+  //   let called = cb(el);
+  //   mapped.push(called);
+  // });
+  // return mapped;
+  return array.map((el) => cb(el));
 };
 
 /*
@@ -60,9 +61,9 @@ array of numbers and returns the average number. Assign the below function to a
 variable using the const keyword.
 */
 const avgValue = (array) => {
-  let sum = array.reduce((el, sum = 0) => (sum += el));
+  let sum = array.reduce((accum, el) => (accum += el));
 
-  let avg = sum / array.length - 1;
+  let avg = sum / array.length;
   return avg;
 };
 

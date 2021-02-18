@@ -44,9 +44,9 @@ describe("hiddenCounter()", function () {
 describe("myMap()", function () {
   it("should function like the built in Array#map", function () {
     //Arrange
-    const array = [1, 2, 3]
+    const array = [1, 2, 3];
     const cb = (el) => {
-      return el += 1;
+      return (el += 1);
     };
     //Act
     const result = myMap(array, cb);
@@ -56,12 +56,16 @@ describe("myMap()", function () {
 
   it("should not call the built in Array#map", function () {
     //Arrange
-    const mapSpy = chai.spy.on(myMap(array), "map")
+    const array = [1, 2, 3];
+    const cb = (el) => {
+      return (el += 1);
+    };
+    const mapSpy = chai.spy.on(array, "map");
     // const mapSpy = chai.spy.on(Array.prototype, "map");
     //Act
 
     //Assert
-    expect(mapSpy).to.have.been.called.exactly(0);
+    expect(myMap(mapSpy)).to.have.been.called.exactly(0);
   });
 });
 
@@ -69,10 +73,10 @@ describe("myMap()", function () {
 describe("avgValue", function () {
   it("should return the average of an array of numbers", function () {
     //Arrange
-
+    const array = [5, 6, 7];
     //Act
-
+    const result = avgValue(array);
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(result).to.eql(6);
   });
 });
