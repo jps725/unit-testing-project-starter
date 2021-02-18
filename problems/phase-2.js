@@ -31,7 +31,7 @@ it will define a count variable, then it will return a function.
 When invoked the function returned by hiddenCounter will increment the counter by 1.
 */
 function hiddenCounter() {
-  let count = undefined;
+  let count = 0;
   return () => (count += 1);
 }
 /*
