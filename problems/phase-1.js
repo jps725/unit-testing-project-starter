@@ -13,7 +13,7 @@ function isFive(num) {
 */
 function isOdd(number) {
   if (typeof number !== "number") {
-    throw Error("some error");
+    throw new Error("some error");
   }
   return number % 2 !== 0;
 }
