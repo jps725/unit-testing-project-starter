@@ -32,13 +32,13 @@ describe("isOdd(number)", () => {
     //Arrange
     const number = 4;
     //Act
-    const result = isOdd(number)
+    const result = isOdd(number);
     //Assert
     expect(result).to.eql(false);
   });
   it("should throw an error if num is not type of Number", () => {
     //Arrange
-    const number = "5"
+    const number = "5";
     //Act
 
     //Assert
@@ -49,30 +49,36 @@ describe("myRange(min, max, step)", () => {
   context("if step is not provided", () => {
     it("should return the correct array with default value step=1", () => {
       //Arrange
-
+      const min = 1;
+      const max = 3;
+      let step = 1;
       //Act
-
+      let result = myRange(min, max, step);
       // Assert
-      expect.fail("Remove this expect.fail and replace it with your test");
+      expect(result).to.eql([1, 2, 3]);
     });
   });
   context("if step is provided", () => {
     it("should return the correct array", () => {
       //Arrange
-
+      const min = 1;
+      const max = 5;
+      const step = 2;
       //Act
-
+      let result = myRange(min, max, step);
       // Assert
-      expect.fail("Remove this expect.fail and replace it with your test");
+      expect(result).to.eql([1, 3, 5]);
     });
   });
   it("should throw an error if num is not type of Number", () => {
     //Arrange
-
+    const min = "1";
+    const max = "5";
+    const step = NaN;
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(() => myRange(min, max, step)).to.throw(Error);
   });
 });
 describe("fizzBuzz(max)", () => {

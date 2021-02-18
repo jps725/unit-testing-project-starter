@@ -24,8 +24,15 @@ function isOdd(number) {
 */
 
 function myRange(min, max, step = 1) {
-  const array = [];
-  for (let i = min; i <= max; i++) {
+  let array = [];
+  if (
+    typeof min !== "number" ||
+    typeof max !== "number" ||
+    typeof step !== "number"
+  ) {
+    throw new Error("input provided must be type of number");
+  }
+  for (let i = min; i <= max; i += step) {
     array.push(i);
   }
   return array;
