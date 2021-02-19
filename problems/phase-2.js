@@ -44,7 +44,7 @@ element. Assign the below function to a variable using the const keyword.
 Do not use the built in Array#map - use Array#forEach for iteration.
 */
 const myMap = (array, cb) => {
-  // let mapped = [];
+  let mapped = [];
 
   // array.forEach((el) => {
   //   let called = cb(el);

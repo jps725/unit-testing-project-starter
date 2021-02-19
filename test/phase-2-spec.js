@@ -63,9 +63,13 @@ describe("myMap()", function () {
     const mapSpy = chai.spy.on(array, "map");
     // const mapSpy = chai.spy.on(Array.prototype, "map");
     //Act
+    console.log(array)
 
+    myMap(array, cb);
+
+    console.log(array);
     //Assert
-    expect(myMap(mapSpy)).to.have.been.called.exactly(0);
+    expect(mapSpy).to.have.been.called.exactly(0);
   });
 });
 
